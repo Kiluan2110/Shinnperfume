@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, ChevronUp, ChevronDown, ShoppingBag } from 'lucide-react';
+import { ChevronUp, ChevronDown, ShoppingBag } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 
@@ -12,48 +12,60 @@ const herPerfumes = [
     id: 1,
     name: 'Rose Élégance',
     price: '$280',
-    description: 'Delicate Bulgarian rose blended with vanilla and white musk. A feminine and alluring fragrance that captures timeless elegance.',
-    notes: ['Bulgarian Rose', 'Madagascar Vanilla', 'White Musk'],
-    image: 'https://images.unsplash.com/photo-1713999327513-1f45210c47ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaW5rJTIwcGVyZnVtZSUyMGJvdHRsZXxlbnwxfHx8fDE3NjU4MTIzNjl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    description: 'A timeless masterpiece capturing the delicate essence of Bulgarian rose, perfectly balanced with the warmth of Madagascar vanilla and the subtle allure of white musk.',
+    topNotes: 'Bulgarian Rose, Pink Pepper',
+    heartNotes: 'Madagascar Vanilla, Jasmine',
+    baseNotes: 'White Musk, Sandalwood',
+    image: 'https://images.unsplash.com/photo-1630573133526-8d090e0269af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwZXJmdW1lJTIwYm90dGxlJTIwcGlua3xlbnwxfHx8fDE3NjU4NTQ5MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
   },
   {
     id: 2,
     name: 'Velvet Blossom',
     price: '$320',
-    description: 'Perfect harmony of jasmine and orange blossom, creating a sweet and luxurious scent that lingers beautifully.',
-    notes: ['Indian Jasmine', 'Tunisian Orange Blossom', 'Sandalwood'],
-    image: 'https://images.unsplash.com/photo-1759793499819-bf60128a54b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwd29tYW4lMjBwZXJmdW1lfGVufDF8fHx8MTc2NTcxNzcxMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    description: 'An enchanting blend that harmonizes the exotic richness of Indian jasmine with the sweet luminosity of Tunisian orange blossom.',
+    topNotes: 'Orange Blossom, Bergamot',
+    heartNotes: 'Indian Jasmine, Tuberose',
+    baseNotes: 'Sandalwood, Amber',
+    image: 'https://images.unsplash.com/photo-1760113559708-84e7a148ec68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwcGVyZnVtZSUyMGJvdHRsZSUyMHdvbWVufGVufDF8fHx8MTc2NTg1Njc0OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
   },
   {
     id: 3,
     name: 'Moonlight Dream',
     price: '$265',
-    description: 'Gentle evening jasmine with warm woody notes and sweet vanilla, evoking dreams under moonlight.',
-    notes: ['Night Jasmine', 'Tahitian Vanilla', 'Cedar Wood'],
+    description: 'Inspired by the magic of moonlit nights, this fragrance combines gentle evening jasmine with warm woody notes and sweet vanilla.',
+    topNotes: 'Night Jasmine, Lemon',
+    heartNotes: 'Tahitian Vanilla, Iris',
+    baseNotes: 'Cedar Wood, Tonka Bean',
     image: 'https://images.unsplash.com/photo-1704961212944-524f56df23fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwcGVyZnVtZSUyMHByb2R1Y3R8ZW58MXx8fHwxNzY1ODIwOTA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
   },
   {
     id: 4,
     name: 'Peony Paradise',
     price: '$350',
-    description: 'Fresh peony combined with red berries and lily of the valley. A vibrant and youthful composition.',
-    notes: ['Peony', 'Red Berries', 'Lily of the Valley'],
+    description: 'A vibrant celebration of youth and freshness, featuring lush peony petals complemented by the sweet brightness of red berries.',
+    topNotes: 'Peony, Red Berries',
+    heartNotes: 'Lily of the Valley, Rose',
+    baseNotes: 'White Musk, Blonde Woods',
     image: 'https://images.unsplash.com/photo-1739190940453-20900e9d18fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwcGVyZnVtZXxlbnwxfHx8fDE3NjU3NDE3Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
   },
   {
     id: 5,
     name: 'Cherry Blossom',
     price: '$295',
-    description: 'Essence of spring with Japanese cherry blossoms, fresh and delicate with subtle sophistication.',
-    notes: ['Cherry Blossom', 'White Rose', 'Musk'],
+    description: 'Capturing the essence of spring in Japan, this delicate fragrance features airy cherry blossoms with fresh and refined notes.',
+    topNotes: 'Cherry Blossom, Mandarin',
+    heartNotes: 'White Rose, Freesia',
+    baseNotes: 'Soft Musk, Rice Powder',
     image: 'https://images.unsplash.com/photo-1706408604086-144590f4020a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMHBlcmZ1bWUlMjBib3R0bGV8ZW58MXx8fHwxNzY1ODIwOTEwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
   },
   {
     id: 6,
     name: 'Golden Orchid',
     price: '$420',
-    description: 'Rare golden orchid, luxurious and captivating with deep, lingering base notes.',
-    notes: ['Golden Orchid', 'Amber', 'Patchouli'],
+    description: 'An opulent fragrance featuring rare golden orchid, luxurious and captivating with deep, lingering base notes.',
+    topNotes: 'Golden Orchid, Saffron',
+    heartNotes: 'Black Orchid, Plum',
+    baseNotes: 'Amber, Patchouli, Dark Chocolate',
     image: 'https://images.unsplash.com/photo-1621962728414-2bf391e9c8d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmFncmFuY2UlMjBiZWF1dHklMjBwcm9kdWN0fGVufDF8fHx8MTc2NTgyMDkxMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
   },
 ];
@@ -73,171 +85,191 @@ export function ForHerPage({ onBack }: ForHerPageProps) {
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Background Effects */}
+      {/* Starry Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-600 rounded-full blur-3xl opacity-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-rose-600 rounded-full blur-3xl opacity-10" />
+        {[...Array(60)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-pink-300 rounded-full"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0],
+            }}
+            transition={{
+              duration: 2 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
       </div>
 
-      {/* Sparkling Stars */}
-      {[...Array(40)].map((_, i) => (
+      {/* Main Content - Full Screen Product */}
+      <AnimatePresence mode="wait">
         <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-pink-300 rounded-full"
-          style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            opacity: [0, 1, 0],
-            scale: [0, 1, 0],
-          }}
-          transition={{
-            duration: 2 + Math.random() * 3,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-          }}
-        />
-      ))}
+          key={currentPerfume.id}
+          initial={{ y: '-100%' }}
+          animate={{ y: 0 }}
+          exit={{ y: '-100%' }}
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
+          className="relative h-screen flex flex-col"
+        >
+          {/* Full Screen Background Image - 3/4 of screen */}
+          <div className="flex-1 relative">
+            <ImageWithFallback
+              src={currentPerfume.image}
+              alt={currentPerfume.name}
+              className="w-full h-full object-contain"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90" />
+          </div>
 
-      {/* Header */}
-      <div className="relative z-10">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="flex items-center justify-between">
+          {/* Bottom Section - 1/4 of screen */}
+          <div className="relative bg-black/80 backdrop-blur-xl border-t border-white/10 p-8">
             <motion.button
               onClick={onBack}
-              className="flex items-center gap-2 text-white hover:text-pink-400 transition-colors"
+              className="absolute top-4 left-4 text-white/60 hover:text-pink-400 transition-colors text-sm tracking-wide"
               whileHover={{ x: -5 }}
               whileTap={{ scale: 0.95 }}
               style={{ fontFamily: 'Cinzel, serif' }}
             >
-              <ArrowLeft className="w-6 h-6" />
-              <span className="text-lg">Back</span>
+              ← Back
             </motion.button>
 
-            <motion.h1
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-white text-4xl tracking-[0.3em]"
-              style={{ fontFamily: 'Cinzel, serif' }}
-            >
-              LUXE PARFUM
-            </motion.h1>
-
-            <div className="w-24" />
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content - Full Screen Product */}
-      <div className="relative z-10 h-[calc(100vh-120px)] flex items-center justify-center px-6">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentPerfume.id}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center"
-          >
-            {/* Product Image */}
+            {/* Product Name and Price */}
             <motion.div
-              className="relative"
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
+              className="mb-6"
             >
-              <div className="relative aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-rose-500/20 blur-3xl rounded-full" />
-                <ImageWithFallback
-                  src={currentPerfume.image}
-                  alt={currentPerfume.name}
-                  className="relative z-10 w-full h-full object-cover rounded-3xl"
-                  style={{
-                    boxShadow: '0 30px 80px rgba(236, 72, 153, 0.3)',
-                  }}
-                />
+              <p 
+                className="text-pink-400 tracking-[0.2em] mb-1 text-sm"
+                style={{ fontFamily: 'Cinzel, serif' }}
+              >
+                FOR HER COLLECTION
+              </p>
+              <div className="flex items-baseline gap-4">
+                <h1 
+                  className="text-white tracking-wide text-4xl"
+                  style={{ fontFamily: 'Cinzel, serif' }}
+                >
+                  {currentPerfume.name}
+                </h1>
+                <p 
+                  className="text-pink-400 text-2xl"
+                  style={{ fontFamily: 'Cinzel, serif' }}
+                >
+                  {currentPerfume.price}
+                </p>
               </div>
             </motion.div>
 
-            {/* Product Details */}
+            {/* Bottom Content - Description, Notes, and Buy Button */}
             <motion.div
-              className="text-white"
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
+              className="grid grid-cols-12 gap-6"
             >
-              <p className="text-pink-400 tracking-widest mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
-                FOR HER COLLECTION
-              </p>
-              <h2 className="text-6xl mb-6 tracking-wide" style={{ fontFamily: 'Cinzel, serif' }}>
-                {currentPerfume.name}
-              </h2>
-              <p className="text-3xl text-pink-400 mb-8" style={{ fontFamily: 'Cinzel, serif' }}>
-                {currentPerfume.price}
-              </p>
-              <p className="text-white/80 text-lg leading-relaxed mb-8">
-                {currentPerfume.description}
-              </p>
-
-              {/* Fragrance Notes */}
-              <div className="mb-10">
-                <h3 className="text-xl mb-4 tracking-wide" style={{ fontFamily: 'Cinzel, serif' }}>
-                  Fragrance Notes
+              {/* Description - Takes 5 columns */}
+              <div className="col-span-5">
+                <h3 
+                  className="text-white text-lg mb-3 tracking-wide"
+                  style={{ fontFamily: 'Cinzel, serif' }}
+                >
+                  Description
                 </h3>
-                <div className="flex flex-wrap gap-3">
-                  {currentPerfume.notes.map((note, i) => (
-                    <span
-                      key={i}
-                      className="px-4 py-2 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30"
+                <p className="text-white/80 leading-relaxed">
+                  {currentPerfume.description}
+                </p>
+              </div>
+
+              {/* Notes - Takes 5 columns */}
+              <div className="col-span-5">
+                <h3 
+                  className="text-white text-lg mb-3 tracking-wide"
+                  style={{ fontFamily: 'Cinzel, serif' }}
+                >
+                  NOTES
+                </h3>
+                <div className="space-y-3">
+                  <div>
+                    <p 
+                      className="text-pink-300 text-sm mb-1 tracking-wider"
                       style={{ fontFamily: 'Cinzel, serif' }}
                     >
-                      {note}
-                    </span>
-                  ))}
+                      TOP
+                    </p>
+                    <p className="text-white/70 text-sm">{currentPerfume.topNotes}</p>
+                  </div>
+                  <div>
+                    <p 
+                      className="text-pink-300 text-sm mb-1 tracking-wider"
+                      style={{ fontFamily: 'Cinzel, serif' }}
+                    >
+                      HEART
+                    </p>
+                    <p className="text-white/70 text-sm">{currentPerfume.heartNotes}</p>
+                  </div>
+                  <div>
+                    <p 
+                      className="text-pink-300 text-sm mb-1 tracking-wider"
+                      style={{ fontFamily: 'Cinzel, serif' }}
+                    >
+                      BASE
+                    </p>
+                    <p className="text-white/70 text-sm">{currentPerfume.baseNotes}</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Product Number */}
-              <p className="text-white/50 mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
-                {currentIndex + 1} / {herPerfumes.length}
-              </p>
-
-              {/* Buy Button */}
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 20px 40px rgba(236, 72, 153, 0.4)',
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full md:w-auto bg-gradient-to-r from-pink-500 to-rose-500 text-white px-12 py-4 rounded-full flex items-center justify-center gap-3 transition-all duration-300"
-                style={{ fontFamily: 'Cinzel, serif' }}
-              >
-                <ShoppingBag className="w-6 h-6" />
-                <span className="text-xl">Add to Cart</span>
-              </motion.button>
+              {/* Buy Button - Takes 2 columns */}
+              <div className="col-span-2 flex items-center justify-end">
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: '0 20px 40px rgba(236, 72, 153, 0.5)',
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-b from-pink-500 to-rose-600 text-white px-6 py-8 rounded-2xl flex flex-col items-center justify-center gap-2 transition-all duration-300 w-full"
+                  style={{ fontFamily: 'Cinzel, serif' }}
+                >
+                  <ShoppingBag className="w-8 h-8" />
+                  <span className="text-lg tracking-wider whitespace-nowrap">
+                    BUY<br />ITEM
+                  </span>
+                </motion.button>
+              </div>
             </motion.div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Navigation Arrows - Right Side */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
         <motion.button
           onClick={goToPrevious}
-          className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-pink-500/30 border border-white/20 transition-all duration-300"
+          className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-pink-500/30 border border-white/20 transition-all duration-300"
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.95 }}
         >
-          <ChevronUp className="w-7 h-7" />
+          <ChevronUp className="w-8 h-8" />
         </motion.button>
+        <div className="text-white/60 text-center text-sm" style={{ fontFamily: 'Cinzel, serif' }}>
+          {currentIndex + 1}/{herPerfumes.length}
+        </div>
         <motion.button
           onClick={goToNext}
-          className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-pink-500/30 border border-white/20 transition-all duration-300"
+          className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-pink-500/30 border border-white/20 transition-all duration-300"
           whileHover={{ scale: 1.1, y: 5 }}
           whileTap={{ scale: 0.95 }}
         >
-          <ChevronDown className="w-7 h-7" />
+          <ChevronDown className="w-8 h-8" />
         </motion.button>
       </div>
     </div>
