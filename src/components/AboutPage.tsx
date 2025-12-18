@@ -8,29 +8,6 @@ interface AboutPageProps {
 export function AboutPage({ onBack }: AboutPageProps) {
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Starry Background */}
-      <div className="absolute inset-0">
-        {[...Array(80)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-white rounded-full"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0, 1, 0],
-              scale: [0, 1.5, 0],
-            }}
-            transition={{
-              duration: 2 + Math.random() * 3,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-10" />
@@ -58,7 +35,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
               className="text-white text-4xl tracking-[0.3em]"
               style={{ fontFamily: 'Cinzel, serif' }}
             >
-              LUXE PARFUM
+              SHINN PERFUME
             </motion.h1>
 
             <div className="w-24" />
@@ -74,7 +51,6 @@ export function AboutPage({ onBack }: AboutPageProps) {
           transition={{ delay: 0.2 }}
           className="text-center mb-16"
         >
-          <Sparkles className="w-16 h-16 text-purple-400 mx-auto mb-6" />
           <h2 
             className="text-white mb-6 tracking-wider"
             style={{ fontFamily: 'Cinzel, serif', fontSize: '4rem' }}
@@ -82,7 +58,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
             About Us
           </h2>
           <p className="text-white/80 text-xl max-w-3xl mx-auto leading-relaxed">
-            Luxe Parfum represents the pinnacle of perfumery artistry, crafting exclusive fragrances that capture the essence of sophistication and timeless elegance.
+            Shinn Perfume redefines the fragrance experience, curating authentic perfumes from the world's most renowned houses and offering them at prices more accessible than traditional boutiques. Each scent is a gateway to sophistication and allure, allowing you to indulge in timeless elegance without compromise.
           </p>
         </motion.div>
 
@@ -158,10 +134,7 @@ export function AboutPage({ onBack }: AboutPageProps) {
           </h3>
           <div className="space-y-4 text-white/80 leading-relaxed text-lg">
             <p>
-              Founded in the heart of Paris, Luxe Parfum has been creating extraordinary fragrances for discerning customers who appreciate the finer things in life. Our journey began with a simple vision: to craft perfumes that tell a story, evoke emotions, and leave a lasting impression.
-            </p>
-            <p>
-              Every bottle of Luxe Parfum represents months of careful development, from selecting rare ingredients to perfecting the final composition. We believe that fragrance is not just a scent, but an expression of identity and style.
+              Founded in the vibrant city of Ho Chi Minh, Vietnam, Shinn Perfume brings authentic fragrances to those who cherish elegance and individuality. Our journey began with a simple vision: to make the art of perfumery accessible, offering scents that tell a story, stir emotions, and leave a lasting impression—at prices more inviting than traditional boutiques.
             </p>
             <p>
               Our collections for Her and Him are designed to celebrate individuality while maintaining the timeless elegance that defines our brand. Each fragrance is a masterpiece, carefully balanced to create an unforgettable sensory experience.

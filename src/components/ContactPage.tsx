@@ -71,7 +71,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
               className="text-white text-4xl tracking-[0.3em]"
               style={{ fontFamily: 'Cinzel, serif' }}
             >
-              LUXE PARFUM
+              SHINN PERFUME
             </motion.h1>
 
             <div className="w-24" />
@@ -124,7 +124,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
                   >
                     Email
                   </h4>
-                  <p className="text-white/70">contact@luxeparfum.com</p>
+                  <p className="text-white/70">dangm9513@gmail.com</p>
                 </div>
               </div>
 
@@ -139,7 +139,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
                   >
                     Phone
                   </h4>
-                  <p className="text-white/70">+1 (555) 123-4567</p>
+                  <p className="text-white/70">0968614058</p>
                 </div>
               </div>
 
@@ -155,8 +155,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
                     Address
                   </h4>
                   <p className="text-white/70">
-                    123 Avenue des Champs-Élysées<br />
-                    Paris, France 75008
+                    109 Thích Quảng Đức, phường 4,<br />
+                    quận Phú Nhuận, TP.HCM
                   </p>
                 </div>
               </div>
