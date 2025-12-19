@@ -138,10 +138,10 @@ export function CustomChatWidget() {
       {/* Chat Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-purple-700 text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-[#D4A574] to-[#B8935F] text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
         style={{
           animation: 'pulse-glow 2s infinite',
-          border: '2px solid rgba(255, 255, 255, 0.1)'
+          border: '2px solid rgba(212, 165, 116, 0.3)'
         }}
         aria-label="Toggle chat"
       >
@@ -159,23 +159,23 @@ export function CustomChatWidget() {
           style={{
             background: 'rgba(0, 0, 0, 0.95)',
             backdropFilter: 'blur(20px)',
-            border: '1px solid rgba(147, 51, 234, 0.3)',
-            boxShadow: '0 0 40px rgba(147, 51, 234, 0.2), 0 20px 60px rgba(0, 0, 0, 0.6)'
+            border: '1px solid rgba(212, 165, 116, 0.3)',
+            boxShadow: '0 0 40px rgba(212, 165, 116, 0.2), 0 20px 60px rgba(0, 0, 0, 0.6)'
           }}
         >
           {/* Header */}
           <div 
             className="p-5 flex items-center justify-between"
             style={{
-              background: 'linear-gradient(135deg, #9333EA 0%, #7C3AED 100%)',
-              borderBottom: '1px solid rgba(147, 51, 234, 0.3)'
+              background: 'rgba(0, 0, 0, 0.95)',
+              borderBottom: '1px solid rgba(212, 165, 116, 0.3)'
             }}
           >
             <div>
-              <h3 className="text-lg font-bold text-white tracking-wide">
+              <h3 className="text-lg font-bold tracking-wide" style={{ color: '#D4A574' }}>
                 SHINN AI Assistant
               </h3>
-              <p className="text-sm text-white/80 mt-1">
+              <p className="text-sm mt-1" style={{ color: '#C9B398' }}>
                 Chuyên gia tư vấn nước hoa
               </p>
             </div>
@@ -184,7 +184,7 @@ export function CustomChatWidget() {
               className="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
               aria-label="Close chat"
             >
-              <X className="w-5 h-5 text-white" />
+              <X className="w-5 h-5" style={{ color: '#D4A574' }} />
             </button>
           </div>
 
@@ -194,7 +194,7 @@ export function CustomChatWidget() {
             style={{
               background: 'rgba(0, 0, 0, 0.6)',
               scrollbarWidth: 'thin',
-              scrollbarColor: 'rgba(147, 51, 234, 0.5) rgba(255, 255, 255, 0.1)'
+              scrollbarColor: 'rgba(212, 165, 116, 0.5) rgba(255, 255, 255, 0.1)'
             }}
           >
             {messages.map((message) => (
@@ -211,9 +211,9 @@ export function CustomChatWidget() {
                   style={
                     message.sender === 'bot'
                       ? {
-                          background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(124, 58, 237, 0.15) 100%)',
-                          border: '1px solid rgba(147, 51, 234, 0.3)',
-                          boxShadow: '0 4px 12px rgba(147, 51, 234, 0.1)'
+                          background: 'linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(201, 179, 152, 0.15) 100%)',
+                          border: '1px solid rgba(212, 165, 116, 0.3)',
+                          boxShadow: '0 4px 12px rgba(212, 165, 116, 0.1)'
                         }
                       : {}
                   }
@@ -230,11 +230,11 @@ export function CustomChatWidget() {
                 <div
                   className="rounded-2xl rounded-bl-md px-4 py-3 flex items-center gap-2"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(124, 58, 237, 0.15) 100%)',
-                    border: '1px solid rgba(147, 51, 234, 0.3)'
+                    background: 'linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(201, 179, 152, 0.15) 100%)',
+                    border: '1px solid rgba(212, 165, 116, 0.3)'
                   }}
                 >
-                  <Loader2 className="w-4 h-4 text-purple-400 animate-spin" />
+                  <Loader2 className="w-4 h-4 text-[#D4A574] animate-spin" />
                   <span className="text-white/70 text-sm">Đang suy nghĩ...</span>
                 </div>
               </div>
@@ -248,7 +248,7 @@ export function CustomChatWidget() {
             className="p-4 border-t"
             style={{
               background: 'rgba(0, 0, 0, 0.8)',
-              borderColor: 'rgba(147, 51, 234, 0.3)'
+              borderColor: 'rgba(212, 165, 116, 0.3)'
             }}
           >
             <div className="flex gap-2">
@@ -260,10 +260,10 @@ export function CustomChatWidget() {
                 onKeyPress={handleKeyPress}
                 placeholder="Nhập câu hỏi của bạn..."
                 disabled={isLoading}
-                className="flex-1 px-4 py-3 rounded-xl text-white text-sm placeholder-white/50 transition-all focus:outline-none focus:ring-2 focus:ring-purple-600/50 disabled:opacity-50"
+                className="flex-1 px-4 py-3 rounded-xl text-white text-sm placeholder-white/50 transition-all focus:outline-none focus:ring-2 focus:ring-[#D4A574]/50 disabled:opacity-50"
                 style={{
                   background: 'rgba(255, 255, 255, 0.08)',
-                  border: '1px solid rgba(147, 51, 234, 0.3)'
+                  border: '1px solid rgba(212, 165, 116, 0.3)'
                 }}
               />
               <button
@@ -271,8 +271,8 @@ export function CustomChatWidget() {
                 disabled={!inputValue.trim() || isLoading}
                 className="px-5 py-3 rounded-xl text-white font-semibold transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 style={{
-                  background: 'linear-gradient(135deg, #9333EA 0%, #7C3AED 100%)',
-                  boxShadow: '0 4px 12px rgba(147, 51, 234, 0.3)'
+                  background: 'linear-gradient(135deg, #D4A574 0%, #C9B398 100%)',
+                  boxShadow: '0 4px 12px rgba(212, 165, 116, 0.3)'
                 }}
               >
                 <Send className="w-5 h-5" />
@@ -286,10 +286,10 @@ export function CustomChatWidget() {
       <style>{`
         @keyframes pulse-glow {
           0%, 100% {
-            box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4), 0 0 0 0 rgba(147, 51, 234, 0.6);
+            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4), 0 0 0 0 rgba(212, 165, 116, 0.6);
           }
           50% {
-            box-shadow: 0 8px 32px rgba(147, 51, 234, 0.6), 0 0 0 8px rgba(147, 51, 234, 0);
+            box-shadow: 0 8px 32px rgba(212, 165, 116, 0.6), 0 0 0 8px rgba(212, 165, 116, 0);
           }
         }
 
@@ -304,12 +304,12 @@ export function CustomChatWidget() {
         }
         
         .overflow-y-auto::-webkit-scrollbar-thumb {
-          background: rgba(147, 51, 234, 0.5);
+          background: rgba(212, 165, 116, 0.5);
           border-radius: 10px;
         }
         
         .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-          background: rgba(147, 51, 234, 0.8);
+          background: rgba(212, 165, 116, 0.8);
         }
       `}</style>
     </>
