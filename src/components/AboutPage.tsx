@@ -20,20 +20,20 @@ export function AboutPage({ onBack }: AboutPageProps) {
           <div className="flex items-center justify-between">
             <motion.button
               onClick={onBack}
-              className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
+              className="flex items-center gap-2 hover:text-[#D4A574] transition-colors"
+              style={{ color: '#D4A574' }}
               whileHover={{ x: -5 }}
               whileTap={{ scale: 0.95 }}
-              style={{ fontFamily: 'Cinzel, serif' }}
             >
               <ArrowLeft className="w-6 h-6" />
-              <span className="text-lg">Back</span>
+              <span className="text-lg" style={{ fontFamily: 'Cinzel, serif' }}>Back</span>
             </motion.button>
 
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-white text-4xl tracking-[0.3em]"
-              style={{ fontFamily: 'Cinzel, serif' }}
+              className="text-4xl tracking-[0.3em]"
+              style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
             >
               SHINN PERFUME
             </motion.h1>
@@ -52,12 +52,12 @@ export function AboutPage({ onBack }: AboutPageProps) {
           className="text-center mb-16"
         >
           <h2 
-            className="text-white mb-6 tracking-wider"
-            style={{ fontFamily: 'Cinzel, serif', fontSize: '4rem' }}
+            className="mb-6 tracking-wider"
+            style={{ fontFamily: 'Cinzel, serif', fontSize: '4rem', color: '#D4A574' }}
           >
             About Us
           </h2>
-          <p className="text-white/80 text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#C9B398' }}>
             Shinn Perfume redefines the fragrance experience, curating authentic perfumes from the world's most renowned houses and offering them at prices more accessible than traditional boutiques. Each scent is a gateway to sophistication and allure, allowing you to indulge in timeless elegance without compromise.
           </p>
         </motion.div>
@@ -68,16 +68,16 @@ export function AboutPage({ onBack }: AboutPageProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+            className="bg-white/5 backdrop-blur-md border border-[#D4A574]/20 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
           >
-            <Award className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+            <Award className="w-12 h-12 mx-auto mb-4" style={{ color: '#D4A574' }} />
             <h3 
-              className="text-white text-xl mb-3 tracking-wide"
-              style={{ fontFamily: 'Cinzel, serif' }}
+              className="text-xl mb-3 tracking-wide"
+              style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
             >
               Premium Quality
             </h3>
-            <p className="text-white/70 leading-relaxed">
+            <p className="leading-relaxed" style={{ color: '#C9B398' }}>
               Each fragrance is meticulously crafted using the finest ingredients sourced from around the world.
             </p>
           </motion.div>
@@ -86,16 +86,16 @@ export function AboutPage({ onBack }: AboutPageProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+            className="bg-white/5 backdrop-blur-md border border-[#D4A574]/20 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
           >
-            <Heart className="w-12 h-12 text-pink-400 mx-auto mb-4" />
+            <Heart className="w-12 h-12 mx-auto mb-4" style={{ color: '#D4A574' }} />
             <h3 
-              className="text-white text-xl mb-3 tracking-wide"
-              style={{ fontFamily: 'Cinzel, serif' }}
+              className="text-xl mb-3 tracking-wide"
+              style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
             >
               Artisan Crafted
             </h3>
-            <p className="text-white/70 leading-relaxed">
+            <p className="leading-relaxed" style={{ color: '#C9B398' }}>
               Our master perfumers blend tradition with innovation to create unique olfactory experiences.
             </p>
           </motion.div>
@@ -104,16 +104,16 @@ export function AboutPage({ onBack }: AboutPageProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+            className="bg-white/5 backdrop-blur-md border border-[#D4A574]/20 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
           >
-            <Globe className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+            <Globe className="w-12 h-12 mx-auto mb-4" style={{ color: '#D4A574' }} />
             <h3 
-              className="text-white text-xl mb-3 tracking-wide"
-              style={{ fontFamily: 'Cinzel, serif' }}
+              className="text-xl mb-3 tracking-wide"
+              style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
             >
               Global Excellence
             </h3>
-            <p className="text-white/70 leading-relaxed">
+            <p className="leading-relaxed" style={{ color: '#C9B398' }}>
               Recognized worldwide for our commitment to luxury and unparalleled sophistication.
             </p>
           </motion.div>
@@ -124,15 +124,15 @@ export function AboutPage({ onBack }: AboutPageProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 backdrop-blur-md border border-white/10 rounded-2xl p-12"
+          className="bg-gradient-to-r from-[#D4A574]/10 to-[#C9B398]/10 backdrop-blur-md border border-[#D4A574]/20 rounded-2xl p-12"
         >
           <h3 
-            className="text-white text-3xl mb-6 tracking-wide"
-            style={{ fontFamily: 'Cinzel, serif' }}
+            className="text-3xl mb-6 tracking-wide"
+            style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
           >
             Our Story
           </h3>
-          <div className="space-y-4 text-white/80 leading-relaxed text-lg">
+          <div className="space-y-4 leading-relaxed text-lg" style={{ color: '#C9B398' }}>
             <p>
               Founded in the vibrant city of Ho Chi Minh, Vietnam, Shinn Perfume brings authentic fragrances to those who cherish elegance and individuality. Our journey began with a simple vision: to make the art of perfumery accessible, offering scents that tell a story, stir emotions, and leave a lasting impression—at prices more inviting than traditional boutiques.
             </p>

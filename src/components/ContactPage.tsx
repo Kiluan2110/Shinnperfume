@@ -46,8 +46,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
 
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-3xl opacity-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-10" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-10" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-600 rounded-full blur-3xl opacity-10" />
       </div>
 
       {/* Header */}
@@ -56,20 +56,20 @@ export function ContactPage({ onBack }: ContactPageProps) {
           <div className="flex items-center justify-between">
             <motion.button
               onClick={onBack}
-              className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"
+              className="flex items-center gap-2 hover:text-[#D4A574] transition-colors"
+              style={{ color: '#D4A574' }}
               whileHover={{ x: -5 }}
               whileTap={{ scale: 0.95 }}
-              style={{ fontFamily: 'Cinzel, serif' }}
             >
               <ArrowLeft className="w-6 h-6" />
-              <span className="text-lg">Back</span>
+              <span className="text-lg" style={{ fontFamily: 'Cinzel, serif' }}>Back</span>
             </motion.button>
 
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-white text-4xl tracking-[0.3em]"
-              style={{ fontFamily: 'Cinzel, serif' }}
+              className="text-4xl tracking-[0.3em]"
+              style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
             >
               SHINN PERFUME
             </motion.h1>
@@ -88,12 +88,12 @@ export function ContactPage({ onBack }: ContactPageProps) {
           className="text-center mb-16"
         >
           <h2 
-            className="text-white mb-6 tracking-wider"
-            style={{ fontFamily: 'Cinzel, serif', fontSize: '4rem' }}
+            className="mb-6 tracking-wider"
+            style={{ fontFamily: 'Cinzel, serif', fontSize: '4rem', color: '#D4A574' }}
           >
             Contact Us
           </h2>
-          <p className="text-white/80 text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-2xl mx-auto leading-relaxed" style={{ color: '#C9B398' }}>
             We'd love to hear from you. Reach out to us for any inquiries about our exclusive fragrances.
           </p>
         </motion.div>
@@ -106,55 +106,55 @@ export function ContactPage({ onBack }: ContactPageProps) {
             transition={{ delay: 0.3 }}
           >
             <h3 
-              className="text-white text-2xl mb-8 tracking-wide"
-              style={{ fontFamily: 'Cinzel, serif' }}
+              className="text-2xl mb-8 tracking-wide"
+              style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
             >
               Get In Touch
             </h3>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-blue-400" />
+                <div className="w-12 h-12 bg-[#D4A574]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-6 h-6" style={{ color: '#D4A574' }} />
                 </div>
                 <div>
                   <h4 
-                    className="text-white mb-1 tracking-wide"
-                    style={{ fontFamily: 'Cinzel, serif' }}
+                    className="mb-1 tracking-wide"
+                    style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
                   >
                     Email
                   </h4>
-                  <p className="text-white/70">dangm9513@gmail.com</p>
+                  <p style={{ color: '#C9B398' }}>dangm9513@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-purple-400" />
+                <div className="w-12 h-12 bg-[#D4A574]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6" style={{ color: '#D4A574' }} />
                 </div>
                 <div>
                   <h4 
-                    className="text-white mb-1 tracking-wide"
-                    style={{ fontFamily: 'Cinzel, serif' }}
+                    className="mb-1 tracking-wide"
+                    style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
                   >
                     Phone
                   </h4>
-                  <p className="text-white/70">0968614058</p>
+                  <p style={{ color: '#C9B398' }}>0968614058</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-pink-400" />
+                <div className="w-12 h-12 bg-[#D4A574]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6" style={{ color: '#D4A574' }} />
                 </div>
                 <div>
                   <h4 
-                    className="text-white mb-1 tracking-wide"
-                    style={{ fontFamily: 'Cinzel, serif' }}
+                    className="mb-1 tracking-wide"
+                    style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
                   >
                     Address
                   </h4>
-                  <p className="text-white/70">
+                  <p style={{ color: '#C9B398' }}>
                     109 Thích Quảng Đức, phường 4,<br />
                     quận Phú Nhuận, TP.HCM
                   </p>
@@ -162,14 +162,14 @@ export function ContactPage({ onBack }: ContactPageProps) {
               </div>
             </div>
 
-            <div className="mt-12 bg-gradient-to-r from-blue-900/20 to-purple-900/20 backdrop-blur-md border border-white/10 rounded-2xl p-6">
+            <div className="mt-12 bg-gradient-to-r from-[#D4A574]/10 to-[#C9B398]/10 backdrop-blur-md border border-[#D4A574]/20 rounded-2xl p-6">
               <h4 
-                className="text-white text-xl mb-3 tracking-wide"
-                style={{ fontFamily: 'Cinzel, serif' }}
+                className="text-xl mb-3 tracking-wide"
+                style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
               >
                 Business Hours
               </h4>
-              <div className="space-y-2 text-white/70">
+              <div className="space-y-2" style={{ color: '#C9B398' }}>
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 4:00 PM</p>
                 <p>Sunday: Closed</p>
@@ -187,8 +187,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
               <div>
                 <label 
                   htmlFor="name" 
-                  className="block text-white mb-2 tracking-wide"
-                  style={{ fontFamily: 'Cinzel, serif' }}
+                  className="block mb-2 tracking-wide"
+                  style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
                 >
                   Name
                 </label>
@@ -198,7 +198,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-blue-400 transition-colors"
+                  className="w-full bg-white/5 border border-[#D4A574]/20 rounded-lg px-4 py-3 focus:outline-none focus:border-[#D4A574] transition-colors"
+                  style={{ color: '#D4A574' }}
                   placeholder="Your name"
                 />
               </div>
@@ -206,8 +207,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
               <div>
                 <label 
                   htmlFor="email" 
-                  className="block text-white mb-2 tracking-wide"
-                  style={{ fontFamily: 'Cinzel, serif' }}
+                  className="block mb-2 tracking-wide"
+                  style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
                 >
                   Email
                 </label>
@@ -217,7 +218,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-blue-400 transition-colors"
+                  className="w-full bg-white/5 border border-[#D4A574]/20 rounded-lg px-4 py-3 focus:outline-none focus:border-[#D4A574] transition-colors"
+                  style={{ color: '#D4A574' }}
                   placeholder="your@email.com"
                 />
               </div>
@@ -225,8 +227,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
               <div>
                 <label 
                   htmlFor="message" 
-                  className="block text-white mb-2 tracking-wide"
-                  style={{ fontFamily: 'Cinzel, serif' }}
+                  className="block mb-2 tracking-wide"
+                  style={{ fontFamily: 'Cinzel, serif', color: '#D4A574' }}
                 >
                   Message
                 </label>
@@ -236,7 +238,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   rows={6}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-blue-400 transition-colors resize-none"
+                  className="w-full bg-white/5 border border-[#D4A574]/20 rounded-lg px-4 py-3 focus:outline-none focus:border-[#D4A574] transition-colors resize-none"
+                  style={{ color: '#D4A574' }}
                   placeholder="Tell us how we can help you..."
                 />
               </div>
@@ -245,10 +248,10 @@ export function ContactPage({ onBack }: ContactPageProps) {
                 type="submit"
                 whileHover={{
                   scale: 1.02,
-                  boxShadow: '0 20px 40px rgba(59, 130, 246, 0.4)',
+                  boxShadow: '0 20px 40px rgba(212, 165, 116, 0.4)',
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all duration-300"
+                className="w-full bg-gradient-to-r from-[#D4A574] to-[#C9B398] text-black px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all duration-300"
                 style={{ fontFamily: 'Cinzel, serif' }}
               >
                 <Send className="w-5 h-5" />

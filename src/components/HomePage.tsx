@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-// Use hosted image URLs for production deployment
-const forHerImage = 'https://images.unsplash.com/photo-1636730510270-292129a416f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3b21lbiUyMHBlcmZ1bWUlMjBqZXdlbHJ5JTIwZ29sZHxlbnwxfHx8fDE3NjYxMzM1NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080';
-const forHimImage = 'https://images.unsplash.com/photo-1698867928110-2408e8e2f44a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaW9yJTIwc2F1dmFnZSUyMHBlcmZ1bWUlMjB3YXRjaCUyMGx1eHVyeXxlbnwxfHx8fDE3NjYxMzM1NTN8MA&ixlib=rb-4.1.0&q=80&w=1080';
+// Import luxury perfume images from Figma
+import forHerImage from 'figma:asset/102b8b40e4737ee23214e3dffb812b7dae2ca12d.png';
+import forHimImage from 'figma:asset/8d51994707cf2c60f30ea55cfd37b4806e617a7e.png';
 
 interface HomePageProps {
   onNavigate: (page: 'her' | 'him' | 'about' | 'contact' | 'admin' | 'chattest' | 'n8ntest') => void;
@@ -12,16 +12,6 @@ interface HomePageProps {
 
 export function HomePage({ onNavigate }: HomePageProps) {
   const [hoveredSide, setHoveredSide] = useState<'her' | 'him' | null>(null);
-  const [showCenterTextMobile, setShowCenterTextMobile] = useState(true);
-
-  // Auto-hide center text on mobile after 3 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowCenterTextMobile(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   // Secret key combinations to access special pages
   useEffect(() => {
@@ -127,7 +117,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           {/* Dark Overlay - lighter on hover */}
-          <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-colors duration-700" />
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-700" />
         </div>
 
         {/* For Her Text - Bottom Left */}
@@ -222,7 +212,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           {/* Dark Overlay - lighter on hover */}
-          <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-colors duration-700" />
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-700" />
         </div>
 
         {/* For Him Text - Top Right (mobile) / Bottom Right (desktop) */}
@@ -324,7 +314,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none md:opacity-100"
         initial={{ opacity: 0 }}
         animate={{ 
-          opacity: hoveredSide ? 0 : (showCenterTextMobile ? 1 : 0)
+          opacity: hoveredSide ? 0 : 1
         }}
         transition={{ duration: 0.5 }}
       >
