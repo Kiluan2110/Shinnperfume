@@ -1,8 +1,10 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import forHerImage from 'figma:asset/b4e31e20fe924d0cddd8f6b5750ad44b6841ff88.png';
-import forHimImage from 'figma:asset/0be2512debf2aa3e5b6cbdbe3aa5830fb5e408ac.png';
+
+// Use hosted image URLs for production deployment
+const forHerImage = 'https://images.unsplash.com/photo-1636730510270-292129a416f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3b21lbiUyMHBlcmZ1bWUlMjBqZXdlbHJ5JTIwZ29sZHxlbnwxfHx8fDE3NjYxMzM1NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080';
+const forHimImage = 'https://images.unsplash.com/photo-1698867928110-2408e8e2f44a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaW9yJTIwc2F1dmFnZSUyMHBlcmZ1bWUlMjB3YXRjaCUyMGx1eHVyeXxlbnwxfHx8fDE3NjYxMzM1NTN8MA&ixlib=rb-4.1.0&q=80&w=1080';
 
 interface HomePageProps {
   onNavigate: (page: 'her' | 'him' | 'about' | 'contact' | 'admin' | 'chattest' | 'n8ntest') => void;
