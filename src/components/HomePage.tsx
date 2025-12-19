@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
-import forHerImage from 'figma:asset/102b8b40e4737ee23214e3dffb812b7dae2ca12d.png';
-import forHimImage from 'figma:asset/8d51994707cf2c60f30ea55cfd37b4806e617a7e.png';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import forHerImage from 'figma:asset/b4e31e20fe924d0cddd8f6b5750ad44b6841ff88.png';
+import forHimImage from 'figma:asset/0be2512debf2aa3e5b6cbdbe3aa5830fb5e408ac.png';
 
 interface HomePageProps {
   onNavigate: (page: 'her' | 'him' | 'about' | 'contact' | 'admin' | 'chattest' | 'n8ntest') => void;
@@ -110,13 +111,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
       >
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <ImageWithFallback
             src={forHerImage}
             alt="For Her"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           {/* Dark Overlay - lighter on hover */}
-          <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-700" />
+          <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-colors duration-700" />
         </div>
 
         {/* For Her Text - Bottom Left */}
@@ -210,13 +211,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
       >
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <ImageWithFallback
             src={forHimImage}
             alt="For Him"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           {/* Dark Overlay - lighter on hover */}
-          <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-700" />
+          <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-colors duration-700" />
         </div>
 
         {/* For Him Text - Top Right (mobile) / Bottom Right (desktop) */}

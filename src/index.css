@@ -958,6 +958,16 @@
     }
   }
 
+  .bg-black\/70 {
+    background-color: #000000b3;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-black\/70 {
+      background-color: color-mix(in oklab, var(--color-black) 70%, transparent);
+    }
+  }
+
   .bg-black\/90 {
     background-color: #000000e6;
   }
@@ -1386,13 +1396,13 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:bg-black\/30:is(:where(.group):hover *) {
-      background-color: #0000004d;
+    .group-hover\:bg-black\/50:is(:where(.group):hover *) {
+      background-color: #00000080;
     }
 
     @supports (color: color-mix(in lab, red, red)) {
-      .group-hover\:bg-black\/30:is(:where(.group):hover *) {
-        background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
+      .group-hover\:bg-black\/50:is(:where(.group):hover *) {
+        background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
       }
     }
   }

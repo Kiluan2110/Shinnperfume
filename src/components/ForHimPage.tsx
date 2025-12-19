@@ -3,7 +3,6 @@ import { ChevronUp, ChevronDown, Search } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState, useEffect } from 'react';
 import { usePerfumes } from '../contexts/PerfumeContext';
-import { CustomChatWidget } from './CustomChatWidget';
 
 // Force reload: Fixed For Him duplicate images with 10 UNIQUE Unsplash images - 2024-12-18T10:35:00
 
