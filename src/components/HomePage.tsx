@@ -47,6 +47,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [onNavigate]);
 
+  // Calculate width classes based on hover state
+  const getHerWidthClass = () => {
+    if (hoveredSide === 'her') return 'md:w-2/3';
+    if (hoveredSide === 'him') return 'md:w-1/3';
+    return 'md:w-1/2';
+  };
+
+  const getHimWidthClass = () => {
+    if (hoveredSide === 'him') return 'md:w-2/3';
+    if (hoveredSide === 'her') return 'md:w-1/3';
+    return 'md:w-1/2';
+  };
+
   return (
     <motion.div 
       className="h-screen flex flex-col md:flex-row overflow-hidden relative bg-black"
@@ -99,12 +112,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* For Her - Left Side - Slide from bottom */}
       <motion.div
-        className="relative group overflow-hidden transition-all duration-700 ease-in-out w-full h-1/2 md:w-auto md:h-full"
-        style={{
-          width: window.innerWidth >= 768 
-            ? (hoveredSide === 'her' ? '66.666%' : hoveredSide === 'him' ? '33.333%' : '50%')
-            : '100%',
-        }}
+        className={`relative group overflow-hidden transition-all duration-700 ease-in-out w-full h-1/2 md:h-full ${getHerWidthClass()}`}
         initial={{ y: '100%', opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: [0.6, 0.05, 0.01, 0.9] }}
@@ -199,12 +207,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* For Him - Right Side - Slide from top */}
       <motion.div
-        className="relative group overflow-hidden transition-all duration-700 ease-in-out w-full h-1/2 md:w-auto md:h-full"
-        style={{
-          width: window.innerWidth >= 768 
-            ? (hoveredSide === 'him' ? '66.666%' : hoveredSide === 'her' ? '33.333%' : '50%')
-            : '100%',
-        }}
+        className={`relative group overflow-hidden transition-all duration-700 ease-in-out w-full h-1/2 md:h-full ${getHimWidthClass()}`}
         initial={{ y: '-100%', opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: [0.6, 0.05, 0.01, 0.9] }}
@@ -224,7 +227,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
         {/* For Him Text - Top Right (mobile) / Bottom Right (desktop) */}
         <motion.div
-          className="absolute right-4 md:right-12 z-10 max-w-[280px] md:max-w-md text-right"
+          className="absolute right-4 md:right-12 top-4 md:top-auto md:bottom-4 z-10 max-w-[280px] md:max-w-md text-right"
           initial={{ opacity: 0, y: -20 }}
           animate={{ 
             opacity: 1, 
@@ -232,8 +235,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           }}
           transition={{ delay: 1, duration: 0.5, ease: [0.6, 0.05, 0.01, 0.9] }}
           style={{ 
-            top: window.innerWidth < 768 ? '1rem' : 'auto',
-            bottom: window.innerWidth >= 768 ? (hoveredSide === 'him' ? '3rem' : '1rem') : 'auto',
+            bottom: hoveredSide === 'him' ? '3rem' : '1rem',
           }}
         >
           {/* Title - Always visible */}
@@ -319,12 +321,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* INDULGE YOUR SENSES - Center Text */}
       <motion.div
-        className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none md:opacity-100"
         initial={{ opacity: 0 }}
         animate={{ 
-          opacity: window.innerWidth >= 768 
-            ? (hoveredSide ? 0 : 1)  // Desktop: hide on hover only
-            : (showCenterTextMobile ? 1 : 0)  // Mobile: auto-hide after 3s
+          opacity: hoveredSide ? 0 : (showCenterTextMobile ? 1 : 0)
         }}
         transition={{ duration: 0.5 }}
       >
